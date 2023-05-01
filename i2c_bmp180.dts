@@ -1,0 +1,27 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    fragment@0 {
+        target = <&i2c1>;
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <0>;
+            status = "okay";
+
+            bmp180: bmp180@77 {
+                compatible = "bosch,bmp180";
+                reg = <0x77>;
+                status = "okay";
+            };
+        };
+    };
+};
+
+
+
+
+
+
